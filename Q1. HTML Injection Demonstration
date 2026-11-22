@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Injection Demo</title>
+</head>
+<body>
+
+    <h2>HTML Injection Demonstration</h2>
+
+    <form onsubmit="showComment(event)">
+        <label>Enter Your Comment:</label>
+        <br><br>
+
+        <input type="text" id="comment"
+               placeholder="Enter comment">
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <h3>Output:</h3>
+    <div id="result"></div>
+
+    <script>
+        function showComment(event) {
+            event.preventDefault();
+
+            var userComment =
+                document.getElementById("comment").value;
+
+            document.getElementById("result").innerHTML =
+                userComment;
+        }
+    </script>
+
+</body>
+</html>
